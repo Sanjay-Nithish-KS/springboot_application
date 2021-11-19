@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('clean Package') {
             steps {
-                mvn clean package 
+                mvn -version
             }
         }
     }
