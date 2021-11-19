@@ -1,9 +1,9 @@
 pipeline {
     agent any 
     stages {
-        stage('Stage 1') {
+        stage('clean Package') {
             steps {
-                echo 'Hello world!' 
+                mvn clean package 
             }
         }
     }
