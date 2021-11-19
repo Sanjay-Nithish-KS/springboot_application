@@ -1,13 +1,16 @@
 pipeline {
     agent any 
     stages {
-        stage('clean Package') {
+        stage('build') {
             steps {
-                sh 'ls -l'
-                dir('/home/ubuntu/workspace/ultibranch_pipeline_releases_1.1/springboot_application') {
-                    sh 'ls'
-                }
+                sh 'docker build -t sanjaynithish/spring_boot_application:build-$BUILD_NUMBER .'
             }
         }
+        stage('push docker image') {
+            steps {
+                sh 'docker login --username sanjaynithish --password scf@94430'
+                sh 'docker push sanjaynithish/spring_boot_application:build-$BUILD_NUMBER'
+            }
+        }    
     }
 }
