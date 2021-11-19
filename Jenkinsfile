@@ -4,7 +4,9 @@ pipeline {
         stage('clean Package') {
             steps {
                 echo "$USER"
-                sh 'pwd'
+                dir('/home/ubuntu/workspace/ultibranch_pipeline_releases_1.1/springboot_application') {
+                    sh 'ls'
+                }
             }
         }
     }
