@@ -3,7 +3,7 @@ WORKDIR /app
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update
 RUN apt-get install -y  git
-RUN git clone https://github.com/Sanjay-Nithish-KS/springboot_application
+ADD . .
 WORKDIR /app/springboot_application
 RUN apt-get update
 RUN apt-get install -y maven
