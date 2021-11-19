@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('clean Package') {
             steps {
+                echo "$USER"
                 mvn -version
             }
         }
