@@ -7,5 +7,4 @@ ADD . .
 RUN apt-get update
 RUN apt-get install -y maven
 EXPOSE 8080
-RUN "mvn clean install"
-CMD ["java", "-jar target/SpringBootMavenExample-2.5.4.jar"]
+CMD ["mvn","spring-boot:run"]
