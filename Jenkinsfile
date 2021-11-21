@@ -24,7 +24,8 @@ pipeline {
     post {
         success {
             emailext body: 'The BUILD-$BUILD_NUMBER has been built sucessfully', subject: 'BUILD-$BUILD_NUMBER', to: 'sanjaypresidio@gmail.com'
-            build job: 'assignment-10-pipeline', parameters: [string(name: 'Build_No', value: '$BUILD_NUMBER')]
+            def build=$BUILD_NUMBER
+            build job: 'assignment-10-pipeline', parameters: [string(name: 'Build_No', value: '$build')]
         }
     }
 }
